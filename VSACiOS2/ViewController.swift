@@ -9,6 +9,7 @@
 import UIKit
 import AppCenter
 import AppCenterAnalytics
+import AppCenterCrashes
 
 class ViewController: UIViewController {
 
@@ -29,7 +30,9 @@ class ViewController: UIViewController {
 
     @IBAction func buttonPressed(_ sender: UIButton) {
         
+        label1.text = "button pressed"
         MSAnalytics.trackEvent("Test button clicked", withProperties: ["Category" : "Music", "FileName" : "favorite.avi"])
+        MSCrashes.generateTestCrash()
     }
     
 }
